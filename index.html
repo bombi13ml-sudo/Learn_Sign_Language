@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="fil">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SIGNED — Diksyunaryo ng Sign Language</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ══ NAVBAR ══ -->
+    <header>
+        <div class="header-brand">
+            <div class="brand-icon">🤟</div>
+            <div>
+                <h1>SIGNED</h1>
+                <div class="header-tagline">Diksyunaryo ng Sign Language</div>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="#about" class="nav-link">Tungkol</a>
+            <a href="#alphabet-section" class="nav-link">Alpabeto</a>
+            <a href="#phrases" class="nav-link">Parirala</a>
+            <a href="#facts" class="nav-link">Mga Katotohanan</a>
+            <a href="#featured" class="nav-link">Featured</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="search-wrap">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchBar" placeholder="Maghanap ng letra o parirala…" onkeyup="filterCards()">
+        </div>
+    </header>
+
+    <!-- ══ INTRO / ABOUT SECTION ══ -->
+    <section id="about" class="intro-section">
+        <div class="intro-inner">
+            <div class="intro-text-col">
+                <p class="intro-eyebrow">✦ Maligayang pagdating</p>
+                <h2 class="intro-headline">Ang Wika ng<br><span class="accent-word">Kamay</span> ay<br>Para sa Lahat.</h2>
+                <p class="intro-body">
+                    Ang <strong>SIGNED</strong> ay isang libreng online na diksyunaryo ng American Sign Language (ASL) na dinisenyo para sa lahat — sa mga gustong matuto, sa mga kaibigan ng Deaf community, at sa mga nagnanais na mag-communicate nang mas malawak.
+                </p>
+                <p class="intro-body">
+                    Dito makikita mo ang mga video tutorial ng bawat letra sa alpabeto at ng mga karaniwang parirala, na ginawa upang maging madali, masaya, at accessible para sa lahat ng edad.
+                </p>
+                <div class="intro-stats">
+                    <div class="stat-pill">
+                        <span class="stat-num">26</span>
+                        <span class="stat-label">Letra ng Alpabeto</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">50+</span>
+                        <span class="stat-label">Mga Parirala</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Libre at Libre</span>
+                    </div>
+                </div>
+                <div class="intro-buttons">
+                    <a href="#alphabet-section" class="btn-primary">Simulan ang Pag-aaral →</a>
+                    <a href="#upload" class="btn-ghost">I-share ang Iyong Sign 🤟</a>
+                </div>
+            </div>
+            <div class="intro-visual-col">
+                <div class="hands-display">
+                    <div class="hand-bubble h1">👋</div>
+                    <div class="hand-bubble h2">🤟</div>
+                    <div class="hand-bubble h3">✌️</div>
+                    <div class="hand-bubble h4">🤙</div>
+                    <div class="hand-bubble h5">👍</div>
+                    <div class="hand-bubble h6">🖐️</div>
+                    <div class="intro-circle-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ HERO BANNER ══ -->
+    <div class="page-layout">
+        <div class="main-col">
+
+            <div class="hero-banner">
+                <div class="hero-video-side">
+                    <div class="hero-track" id="heroTrack">
+                        <div class="hero-slide">
+                            <video muted loop autoplay preload="metadata" src="videos/phrases/Again.mp4" class="hero-video"></video>
+                            <div class="hero-video-overlay"></div>
+                        </div>
+                        <div class="hero-slide">
+                            <video muted loop preload="metadata" src="videos/phrases/Hello .mp4" class="hero-video"></video>
+                            <div class="hero-video-overlay"></div>
+                        </div>
+                        <div class="hero-slide">
+                            <video muted loop preload="metadata" src="videos/phrases/Thank You .mp4" class="hero-video"></video>
+                            <div class="hero-video-overlay"></div>
+                        </div>
+                        <div class="hero-slide">
+                            <video muted loop preload="metadata" src="videos/phrases/Bye .mp4" class="hero-video"></video>
+                            <div class="hero-video-overlay"></div>
+                        </div>
+                        <div class="hero-slide">
+                            <video muted loop preload="metadata" src="videos/phrases/Yes .mp4" class="hero-video"></video>
+                            <div class="hero-video-overlay"></div>
+                        </div>
+                    </div>
+                    <button class="hero-prev" id="heroPrev">&#8249;</button>
+                    <button class="hero-next" id="heroNext">&#8250;</button>
+                    <div class="hero-dots" id="heroDots">
+                        <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    </div>
+                </div>
+                <div class="hero-content-wrap" id="heroContentWrap">
+                    <div class="hero-content hero-content-slide active" data-idx="0">
+                        <p class="hero-eyebrow">✦ Pangunahing Parirala</p>
+                        <h2 class="hero-title">AGAIN</h2>
+                        <p class="hero-desc">Matutunan ang sign para sa <strong>Again (Muli)</strong> sa pamamagitan ng aming video tutorial.</p>
+                        <a href="#phrases" class="hero-cta">Tingnan ang lahat ng parirala.</a>
+                    </div>
+                    <div class="hero-content hero-content-slide" data-idx="1">
+                        <p class="hero-eyebrow">✦ Pangunahing Parirala</p>
+                        <h2 class="hero-title">HELLO</h2>
+                        <p class="hero-desc">Matutunan ang sign para sa <strong>Hello (Kamusta)</strong> sa pamamagitan ng aming video tutorial.</p>
+                        <a href="#phrases" class="hero-cta">Tingnan ang lahat ng parirala.</a>
+                    </div>
+                    <div class="hero-content hero-content-slide" data-idx="2">
+                        <p class="hero-eyebrow">✦ Pangunahing Parirala</p>
+                        <h2 class="hero-title">SALAMAT</h2>
+                        <p class="hero-desc">Matutunan ang sign para sa <strong>Thank You (Salamat)</strong> sa pamamagitan ng aming video tutorial.</p>
+                        <a href="#phrases" class="hero-cta">Tingnan ang lahat ng parirala.</a>
+                    </div>
+                    <div class="hero-content hero-content-slide" data-idx="3">
+                        <p class="hero-eyebrow">✦ Pangunahing Parirala</p>
+                        <h2 class="hero-title">PAALAM</h2>
+                        <p class="hero-desc">Matutunan ang sign para sa <strong>Bye (Paalam)</strong> sa pamamagitan ng aming video tutorial.</p>
+                        <a href="#phrases" class="hero-cta">Tingnan ang lahat ng parirala.</a>
+                    </div>
+                    <div class="hero-content hero-content-slide" data-idx="4">
+                        <p class="hero-eyebrow">✦ Pangunahing Parirala</p>
+                        <h2 class="hero-title">OO</h2>
+                        <p class="hero-desc">Matutunan ang sign para sa <strong>Yes (Oo)</strong> sa pamamagitan ng aming video tutorial.</p>
+                        <a href="#phrases" class="hero-cta">Tingnan ang lahat ng parirala.</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ══ DID YOU KNOW FACTS ══ -->
+            <section id="facts" class="facts-section">
+                <div class="facts-header">
+                    <span class="section-badge">💡 Alam Mo Ba?</span>
+                    <h3 class="facts-title">Mga Kawili-wiling Katotohanan Tungkol sa Sign Language</h3>
+                </div>
+                <div class="facts-track-wrap">
+                    <div class="facts-track" id="factsTrack">
+                        <div class="fact-card">
+                            <div class="fact-icon">🌍</div>
+                            <h4>300 Iba't Ibang Sign Language</h4>
+                            <p>May mahigit 300 uri ng sign language sa buong mundo. Ang ASL (American Sign Language) ay isa sa pinakamalawak na ginagamit.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon">🧠</div>
+                            <h4>Natural na Wika</h4>
+                            <p>Ang sign language ay hindi isinaling bersyon ng wikang binibigkas — ito ay isang ganap at sariling wika na may sariling grammar at istruktura.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon">👶</div>
+                            <h4>Maaga ang Pag-aaral</h4>
+                            <p>Ang mga sanggol ay maaaring matuto ng sign language bago pa man sila makapagsalita. Pinipigilan nito ang pagkabigo sa komunikasyon sa maagang edad.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon">🇵🇭</div>
+                            <h4>FSL sa Pilipinas</h4>
+                            <p>Ang Pilipinas ay may sariling Filipino Sign Language (FSL). Sa ilalim ng Republic Act 11106, ito ay opisyal na kinikilala bilang pambansang wika ng mga Deaf na Pilipino.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon">🎭</div>
+                            <h4>Ekspresyon ng Mukha</h4>
+                            <p>Sa sign language, ang ekspresyon ng mukha ay bahagi ng grammar — hindi lamang ito para sa emosyon. Mahalaga ito sa pagbabago ng kahulugan ng mga salita.</p>
+                        </div>
+                        <div class="fact-card">
+                            <div class="fact-icon">⚡</div>
+                            <h4>Kasing Bilis ng Pagsasalita</h4>
+                            <p>Ang mga bihasa sa ASL ay maaaring mag-sign nang kasing bilis ng pagsasalita ng isang taong nagsasalita — humigit-kumulang 100–150 na salita bawat minuto.</p>
+                        </div>
+                    </div>
+                    <button class="facts-prev" id="factsPrev">&#8249;</button>
+                    <button class="facts-next" id="factsNext">&#8250;</button>
+                </div>
+            </section>
+
+            <!-- ══ ALPHABET SECTION ══ -->
+            <section class="section-title" id="alphabet-section">
+                <span class="section-badge">A–Z</span> Alpabeto
+            </section>
+
+            <div class="container">
+                <div class="card" data-letter="A"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/A.mp4"></video></div><div class="label">A</div></div>
+                <div class="card" data-letter="B"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/B.mp4"></video></div><div class="label">B</div></div>
+                <div class="card" data-letter="C"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/C.mp4"></video></div><div class="label">C</div></div>
+                <div class="card" data-letter="D"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/D.mp4"></video></div><div class="label">D</div></div>
+                <div class="card" data-letter="E"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/E.mp4"></video></div><div class="label">E</div></div>
+                <div class="card" data-letter="F"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/F.mp4"></video></div><div class="label">F</div></div>
+                <div class="card" data-letter="G"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/G.mp4"></video></div><div class="label">G</div></div>
+                <div class="card" data-letter="H"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/H.mp4"></video></div><div class="label">H</div></div>
+                <div class="card" data-letter="I"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/I.mp4"></video></div><div class="label">I</div></div>
+                <div class="card" data-letter="J"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/J.mp4"></video></div><div class="label">J</div></div>
+                <div class="card" data-letter="K"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/K.mp4"></video></div><div class="label">K</div></div>
+                <div class="card" data-letter="L"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/L.mp4"></video></div><div class="label">L</div></div>
+                <div class="card" data-letter="M"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/M.mp4"></video></div><div class="label">M</div></div>
+                <div class="card" data-letter="N"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/N.mp4"></video></div><div class="label">N</div></div>
+                <div class="card" data-letter="O"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/O.mp4"></video></div><div class="label">O</div></div>
+                <div class="card" data-letter="P"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/P.mp4"></video></div><div class="label">P</div></div>
+                <div class="card" data-letter="Q"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/Q.mp4"></video></div><div class="label">Q</div></div>
+                <div class="card" data-letter="R"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/R.mp4"></video></div><div class="label">R</div></div>
+                <div class="card" data-letter="S"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/S.mp4"></video></div><div class="label">S</div></div>
+                <div class="card" data-letter="T"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/T.mp4"></video></div><div class="label">T</div></div>
+                <div class="card" data-letter="U"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/U.mp4"></video></div><div class="label">U</div></div>
+                <div class="card" data-letter="V"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/V.mp4"></video></div><div class="label">V</div></div>
+                <div class="card" data-letter="W"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/W.mp4"></video></div><div class="label">W</div></div>
+                <div class="card" data-letter="X"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/X.mp4"></video></div><div class="label">X</div></div>
+                <div class="card" data-letter="Y"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/Y.mp4"></video></div><div class="label">Y</div></div>
+                <div class="card" data-letter="Z"><div class="placeholder"><video muted loop controls preload="metadata" src="videos/alphabet/Z.mp4"></video></div><div class="label">Z</div></div>
+            </div>
+
+            <!-- ══ PHRASES SECTION ══ -->
+            <section class="section-title" id="phrases">
+                <span class="section-badge">Mga Parirala</span> Pangunahing Mga Parirala
+            </section>
+
+            <div class="container">
+
+                <div class="card" data-phrase="Again" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Again.mp4"></video>
+                    </div>
+                    <div class="label">Again</div>
+                </div>
+
+                <div class="card" data-phrase="Ahh My Friend Is Hard Of Hearing She Knows Asl And English" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Ahh, My Friend Is Hard Of Hearing, She Knows Asl And English.mp4"></video>
+                    </div>
+                    <div class="label">Ahh, My Friend Is Hard Of Hearing, She Knows ASL And English</div>
+                </div>
+
+                <div class="card" data-phrase="And" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/And .mp4"></video>
+                    </div>
+                    <div class="label">And</div>
+                </div>
+
+                <div class="card" data-phrase="Bad" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Bad .mp4"></video>
+                    </div>
+                    <div class="label">Bad</div>
+                </div>
+
+                <div class="card" data-phrase="Blind" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Blind .mp4"></video>
+                    </div>
+                    <div class="label">Blind</div>
+                </div>
+
+                <div class="card" data-phrase="Boss" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Boss .mp4"></video>
+                    </div>
+                    <div class="label">Boss</div>
+                </div>
+
+                <div class="card" data-phrase="But" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/But .mp4"></video>
+                    </div>
+                    <div class="label">But</div>
+                </div>
+
+                <div class="card" data-phrase="Bye" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Bye .mp4"></video>
+                    </div>
+                    <div class="label">Bye</div>
+                </div>
+
+                <div class="card" data-phrase="Can" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Can .mp4"></video>
+                    </div>
+                    <div class="label">Can</div>
+                </div>
+
+                <div class="card" data-phrase="Cant" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Cant .mp4"></video>
+                    </div>
+                    <div class="label">Can't</div>
+                </div>
+
+                <div class="card" data-phrase="Cool" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Cool .mp4"></video>
+                    </div>
+                    <div class="label">Cool</div>
+                </div>
+
+                <div class="card" data-phrase="Cool You Know English Sign Language Nice" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Cool You Know English Sign Language, Nice .mp4"></video>
+                    </div>
+                    <div class="label">Cool You Know English Sign Language, Nice</div>
+                </div>
+
+                <div class="card" data-phrase="Dad" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Dad .mp4"></video>
+                    </div>
+                    <div class="label">Dad</div>
+                </div>
+
+                <div class="card" data-phrase="Deaf" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Deaf .mp4"></video>
+                    </div>
+                    <div class="label">Deaf</div>
+                </div>
+
+                <div class="card" data-phrase="Do You Know Asl" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Do You Know Asl .mp4"></video>
+                    </div>
+                    <div class="label">Do You Know ASL</div>
+                </div>
+
+                <div class="card" data-phrase="Dont Worry About It" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Don T Worry About It .mp4"></video>
+                    </div>
+                    <div class="label">Don't Worry About It</div>
+                </div>
+
+                <div class="card" data-phrase="English" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/English .mp4"></video>
+                    </div>
+                    <div class="label">English</div>
+                </div>
+
+                <div class="card" data-phrase="Excuse Me" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Excuse Me .mp4"></video>
+                    </div>
+                    <div class="label">Excuse Me</div>
+                </div>
+
+                <div class="card" data-phrase="Fine" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Fine .mp4"></video>
+                    </div>
+                    <div class="label">Fine</div>
+                </div>
+
+                <div class="card" data-phrase="Fine Thank You See You Later Bye" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Fine, Thank You. See You Later, Bye .mp4"></video>
+                    </div>
+                    <div class="label">Fine, Thank You. See You Later, Bye</div>
+                </div>
+
+                <div class="card" data-phrase="Forgot" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Forgot .mp4"></video>
+                    </div>
+                    <div class="label">Forgot</div>
+                </div>
+
+                <div class="card" data-phrase="Friend" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Friend .mp4"></video>
+                    </div>
+                    <div class="label">Friend</div>
+                </div>
+
+                <div class="card" data-phrase="Good" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good .mp4"></video>
+                    </div>
+                    <div class="label">Good</div>
+                </div>
+
+                <div class="card" data-phrase="Good Afternoon" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good Afternoon .mp4"></video>
+                    </div>
+                    <div class="label">Good Afternoon</div>
+                </div>
+
+                <div class="card" data-phrase="Good Day" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good Day .mp4"></video>
+                    </div>
+                    <div class="label">Good Day</div>
+                </div>
+
+                <div class="card" data-phrase="Good Evening" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good Evening .mp4"></video>
+                    </div>
+                    <div class="label">Good Evening</div>
+                </div>
+
+                <div class="card" data-phrase="Good Midday" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good Midday .mp4"></video>
+                    </div>
+                    <div class="label">Good Midday</div>
+                </div>
+
+                <div class="card" data-phrase="Good Morning" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Good Morning .mp4"></video>
+                    </div>
+                    <div class="label">Good Morning</div>
+                </div>
+
+                <div class="card" data-phrase="Goodnight" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Goodnight .mp4"></video>
+                    </div>
+                    <div class="label">Goodnight</div>
+                </div>
+
+                <div class="card" data-phrase="Hard Of Hearing" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Hard Of Hearing .mp4"></video>
+                    </div>
+                    <div class="label">Hard Of Hearing</div>
+                </div>
+
+                <div class="card" data-phrase="He/She/They" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/He She They .mp4"></video>
+                    </div>
+                    <div class="label">He She They</div>
+                </div>
+
+                <div class="card" data-phrase="Hearing" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Hearing .mp4"></video>
+                    </div>
+                    <div class="label">Hearing</div>
+                </div>
+
+                <div class="card" data-phrase="Hello" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Hello .mp4"></video>
+                    </div>
+                    <div class="label">Hello</div>
+                </div>
+
+                <div class="card" data-phrase="Hello Im Deaf Do You Know Sign Language" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Hello, I M Deaf. Do You Know Sign Language .mp4"></video>
+                    </div>
+                    <div class="label">Hello, I'm Deaf. Do You Know Sign Language</div>
+                </div>
+
+                <div class="card" data-phrase="Hello Whats Your Name" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Hello, What S Your Name .mp4"></video>
+                    </div>
+                    <div class="label">Hello, What's Your Name</div>
+                </div>
+
+                <div class="card" data-phrase="How" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/How .mp4"></video>
+                    </div>
+                    <div class="label">How</div>
+                </div>
+
+                <div class="card" data-phrase="How Are You" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/How Are You .mp4"></video>
+                    </div>
+                    <div class="label">How Are You</div>
+                </div>
+
+                <div class="card" data-phrase="I" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I .mp4"></video>
+                    </div>
+                    <div class="label">I</div>
+                </div>
+
+                <div class="card" data-phrase="I Dont Know" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I Don T Know .mp4"></video>
+                    </div>
+                    <div class="label">I Don't Know</div>
+                </div>
+
+                <div class="card" data-phrase="I Dont Know Sign Language" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I Don T Know Sign Language .mp4"></video>
+                    </div>
+                    <div class="label">I Don't Know Sign Language</div>
+                </div>
+
+                <div class="card" data-phrase="I Dont Know Asl" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I Dont Know Asl .mp4"></video>
+                    </div>
+                    <div class="label">I Don't Know ASL</div>
+                </div>
+
+                <div class="card" data-phrase="I Know Asl" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I Know Asl.mp4"></video>
+                    </div>
+                    <div class="label">I Know ASL</div>
+                </div>
+
+                <div class="card" data-phrase="I Love You" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I Love You .mp4"></video>
+                    </div>
+                    <div class="label">I Love You</div>
+                </div>
+
+                <div class="card" data-phrase="I'm Sorry" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/I M Sorry .mp4"></video>
+                    </div>
+                    <div class="label">I'm Sorry</div>
+                </div>
+
+                <div class="card" data-phrase="Know" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Know .mp4"></video>
+                    </div>
+                    <div class="label">Know</div>
+                </div>
+
+                <div class="card" data-phrase="Language" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Language .mp4"></video>
+                    </div>
+                    <div class="label">Language</div>
+                </div>
+
+                <div class="card" data-phrase="Mom" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Mom .mp4"></video>
+                    </div>
+                    <div class="label">Mom</div>
+                </div>
+
+                <div class="card" data-phrase="My" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/My .mp4"></video>
+                    </div>
+                    <div class="label">My</div>
+                </div>
+
+                <div class="card" data-phrase="Nice To Meet You" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Nice To Meet You .mp4"></video>
+                    </div>
+                    <div class="label">Nice To Meet You</div>
+                </div>
+
+                <div class="card" data-phrase="Nice I Know Asl And So So Bsl" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Nice, I Know Asl And So-So Bsl .mp4"></video>
+                    </div>
+                    <div class="label">Nice, I Know ASL And So-So BSL</div>
+                </div>
+
+                <div class="card" data-phrase="No" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/No .mp4"></video>
+                    </div>
+                    <div class="label">No</div>
+                </div>
+
+                <div class="card" data-phrase="No Problem" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/No Problem .mp4"></video>
+                    </div>
+                    <div class="label">No Problem</div>
+                </div>
+
+                <div class="card" data-phrase="Oh I See" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Oh, I See .mp4"></video>
+                    </div>
+                    <div class="label">Oh, I See</div>
+                </div>
+
+                <div class="card" data-phrase="Please" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Please .mp4"></video>
+                    </div>
+                    <div class="label">Please</div>
+                </div>
+
+                <div class="card" data-phrase="See You Later" data-category="greeting">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/See You Later .mp4"></video>
+                    </div>
+                    <div class="label">See You Later</div>
+                </div>
+
+                <div class="card" data-phrase="Sign" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Sign .mp4"></video>
+                    </div>
+                    <div class="label">Sign</div>
+                </div>
+
+                <div class="card" data-phrase="Sign Slow Please My Asl Is So So" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Sign Slow Please, My Asl Is So-So .mp4"></video>
+                    </div>
+                    <div class="label">Sign Slow Please, My ASL Is So-So</div>
+                </div>
+
+                <div class="card" data-phrase="Slowly" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Slowly .mp4"></video>
+                    </div>
+                    <div class="label">Slowly</div>
+                </div>
+
+                <div class="card" data-phrase="So So" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/So-So .mp4"></video>
+                    </div>
+                    <div class="label">So-So</div>
+                </div>
+
+                <div class="card" data-phrase="Thank You" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Thank You .mp4"></video>
+                    </div>
+                    <div class="label">Thank You</div>
+                </div>
+
+                <div class="card" data-phrase="Too" data-category="expression">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Too .mp4"></video>
+                    </div>
+                    <div class="label">Too</div>
+                </div>
+
+                <div class="card" data-phrase="What" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/What .mp4"></video>
+                    </div>
+                    <div class="label">What</div>
+                </div>
+
+                <div class="card" data-phrase="When" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/When .mp4"></video>
+                    </div>
+                    <div class="label">When</div>
+                </div>
+
+                <div class="card" data-phrase="Where" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Where .mp4"></video>
+                    </div>
+                    <div class="label">Where</div>
+                </div>
+
+                <div class="card" data-phrase="Who" data-category="question">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Who .mp4"></video>
+                    </div>
+                    <div class="label">Who</div>
+                </div>
+
+                <div class="card" data-phrase="Yes" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Yes .mp4"></video>
+                    </div>
+                    <div class="label">Yes</div>
+                </div>
+
+                <div class="card" data-phrase="Yes I Sign" data-category="identity">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Yes, I Sign .mp4"></video>
+                    </div>
+                    <div class="label">Yes, I Sign</div>
+                </div>
+
+                <div class="card" data-phrase="You" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/You .mp4"></video>
+                    </div>
+                    <div class="label">You</div>
+                </div>
+
+                <div class="card" data-phrase="Youre Welcome" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/You Re Welcome .mp4"></video>
+                    </div>
+                    <div class="label">You're Welcome</div>
+                </div>
+
+                <div class="card" data-phrase="Your" data-category="common">
+                    <div class="placeholder">
+                        <video muted loop controls preload="metadata" src="videos/phrases/Your .mp4"></video>
+                    </div>
+                    <div class="label">Your</div>
+                </div>
+
+            </div>
+            <!-- end phrases .container -->
+
+            <!-- ══ FEATURED VISITOR SECTION ══ -->
+            <section id="featured" class="featured-section">
+                <div class="featured-header">
+                    <span class="section-badge">🏆 Top Bisita ng Buwan</span>
+                    <h3 class="featured-title">I-feature ang Iyong Sign!</h3>
+                    <p class="featured-subtitle">Ang pinakamahusay na submissions bawat buwan ay lalabas dito — sa harap ng lahat!</p>
+                </div>
+
+                <!-- Placeholder featured cards (real ones replace via backend) -->
+                <div class="featured-grid">
+                    <div class="featured-card gold">
+                        <div class="featured-rank">🥇 #1</div>
+                        <div class="featured-avatar">👤</div>
+                        <div class="featured-info">
+                            <div class="featured-name">Ikaw? 👀</div>
+                            <div class="featured-sign">Mag-upload at maging #1!</div>
+                            <div class="featured-votes">0 boto</div>
+                        </div>
+                    </div>
+                    <div class="featured-card silver">
+                        <div class="featured-rank">🥈 #2</div>
+                        <div class="featured-avatar">👤</div>
+                        <div class="featured-info">
+                            <div class="featured-name">Available</div>
+                            <div class="featured-sign">Mag-submit na!</div>
+                            <div class="featured-votes">0 boto</div>
+                        </div>
+                    </div>
+                    <div class="featured-card bronze">
+                        <div class="featured-rank">🥉 #3</div>
+                        <div class="featured-avatar">👤</div>
+                        <div class="featured-info">
+                            <div class="featured-name">Available</div>
+                            <div class="featured-sign">Mag-submit na!</div>
+                            <div class="featured-votes">0 boto</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ══ UPLOAD SECTION ══ -->
+            <section id="upload" class="upload-section">
+                <div class="upload-inner">
+                    <div class="upload-text">
+                        <span class="section-badge">📤 Mag-upload</span>
+                        <h3 class="upload-title">Ipakita ang Iyong Galing sa Sign Language!</h3>
+                        <p class="upload-desc">Mag-record ng sarili mong video habang ginagawa mo ang isang sign, i-submit sa aming form, at magkaroon ng pagkakataong ma-feature bilang <strong>Top Bisita ng Buwan</strong>. Lahat ay welcome — bago ka man o beterano!</p>
+                        <ul class="upload-rules">
+                            <li>✅ Malinaw ang mukha at kamay sa video</li>
+                            <li>✅ Max 30 segundo ang haba</li>
+                            <li>✅ MP4, MOV, o WebM na format</li>
+                            <li>✅ Piliin kung anong sign ang iyong ginagawa</li>
+                            <li>⏳ Susuriin muna ng aming team ang bawat submission bago ma-feature</li>
+                        </ul>
+                    </div>
+                    <div class="upload-box">
+                        <div class="upload-drop-area" style="cursor:default;">
+                            <div class="upload-icon">🎬</div>
+                            <p class="upload-drop-text">Handa ka na bang mag-submit?</p>
+                            <p class="upload-drop-sub" style="margin-bottom:8px;">I-click ang button sa ibaba para buksan ang aming submission form. Ang lahat ng submissions ay mare-review muna bago ma-feature sa site.</p>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1SlM-dRPQYuYvQWaUDEni5GPNCczCrONYerKiTTHRQD_E4g/viewform" target="_blank" class="btn-primary" style="margin-top:8px;">🤟 Pumunta sa Submission Form</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- end .main-col -->
+
+
+        <!-- ══ RIGHT SIDEBAR ══ -->
+        <aside class="sidebar">
+
+            <!-- Quick Filter -->
+            <div class="sidebar-panel">
+                <h3 class="sidebar-heading">Mabilis na Filter</h3>
+                <div class="filter-row">
+                    <select class="filter-select" id="filterTopic">
+                        <option value="">Lahat ng Paksa</option>
+                        <option value="alphabet">Alpabeto</option>
+                        <option value="phrases">Mga Parirala</option>
+                    </select>
+                    <select class="filter-select" id="filterCategory">
+                        <option value="">Lahat ng Uri</option>
+                        <option value="greeting">Mga Bati</option>
+                        <option value="question">Mga Tanong</option>
+                        <option value="common">Karaniwang Salita</option>
+                        <option value="identity">Pagkakakilanlan / ASL</option>
+                        <option value="expression">Mga Ekspresyon</option>
+                    </select>
+                </div>
+                <div class="filter-search-wrap">
+                    <input class="filter-search" id="sidebarSearch" type="text" placeholder="Maghanap ng sign…">
+                </div>
+                <button class="filter-btn" id="filterBtn">⚡ I-apply ang Filter</button>
+                <button class="filter-clear-btn" id="filterClearBtn">✕ I-clear</button>
+            </div>
+
+            <!-- Daily Sign -->
+            <div class="sidebar-panel daily-sign-panel">
+                <h3 class="sidebar-heading">📅 Sign ng Araw</h3>
+                <div class="daily-sign-display">
+                    <div class="daily-sign-emoji" id="dailyEmoji">🤟</div>
+                    <div class="daily-sign-word" id="dailyWord">I Love You</div>
+                    <div class="daily-sign-tip" id="dailyTip">Ang tatlong daliri (hintuturo, gitnang daliri, at hinlalaki) ay pinagsama para sa sign na ito.</div>
+                </div>
+                <button class="filter-btn" id="randomSignBtn" style="margin-top:12px;">🎲 Bagong Sign</button>
+            </div>
+
+            <!-- Top Signs -->
+            <div class="sidebar-panel">
+                <div class="top-signs-tabs">
+                    <h3 class="sidebar-heading">🔥 Pinakasikat</h3>
+                    <div class="ts-tabs">
+                        <button class="ts-tab active" data-tab="week">Lingguhan</button>
+                        <button class="ts-tab" data-tab="month">Buwan</button>
+                    </div>
+                </div>
+                <ul class="top-signs-list">
+                    <li><span class="ts-rank r1">1</span><span class="ts-name">Hello</span><span class="ts-views">2.4k views</span></li>
+                    <li><span class="ts-rank r2">2</span><span class="ts-name">I Love You</span><span class="ts-views">1.9k views</span></li>
+                    <li><span class="ts-rank r3">3</span><span class="ts-name">Thank You</span><span class="ts-views">1.7k views</span></li>
+                    <li><span class="ts-rank">4</span><span class="ts-name">Bye</span><span class="ts-views">1.3k views</span></li>
+                    <li><span class="ts-rank">5</span><span class="ts-name">Please</span><span class="ts-views">1.1k views</span></li>
+                </ul>
+            </div>
+
+            <!-- Share -->
+            <div class="sidebar-panel">
+                <h3 class="sidebar-heading">📣 I-share ang SIGNED</h3>
+                <p style="font-size:12px;color:var(--white-muted);margin-bottom:12px;">Tulungan ang iba na matuto ng sign language. I-share ang site na ito sa iyong mga kaibigan!</p>
+                <div class="share-bar">
+                    <a class="share-btn s-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://signed.example.com" target="_blank">Facebook</a>
+                    <a class="share-btn s-twitter" href="https://twitter.com/intent/tweet?text=Matuto%20ng%20sign%20language!&url=https://signed.example.com" target="_blank">X / Twitter</a>
+                    <a class="share-btn s-telegram" href="https://t.me/share/url?url=https://signed.example.com" target="_blank">Telegram</a>
+                    <button class="share-btn s-generic" id="copyLinkBtn">📋 Kopyahin ang Link</button>
+                </div>
+            </div>
+
+            <!-- Suggestion Box -->
+            <div class="sidebar-panel suggestion-panel">
+                <h3 class="sidebar-heading">💬 Kahon ng Mungkahi</h3>
+                <p style="font-size:12px;color:var(--white-muted);margin-bottom:12px;">May gusto kang idagdag? Ipaalam sa amin!</p>
+                <textarea id="suggestionText" class="upload-input upload-textarea" rows="3" placeholder="Hal: Gusto ko pang makita ang sign para sa mga numero…"></textarea>
+                <button class="filter-btn" id="sendSuggestionBtn" style="margin-top:8px;">📨 Isumite</button>
+                <div id="suggestionThanks" style="display:none;font-size:12px;color:#a78bfa;margin-top:8px;">Salamat sa iyong mungkahi! 🙏</div>
+            </div>
+
+        </aside>
+
+    </div>
+    <!-- end .page-layout -->
+
+    <!-- ══ CREDITS & CONTACT ══ -->
+    <section id="contact" class="contact-section">
+        <div class="contact-inner">
+            <div class="contact-col">
+                <div class="contact-brand">
+                    <div class="brand-icon" style="width:48px;height:48px;font-size:24px;">🤟</div>
+                    <div>
+                        <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:3px;">SIGNED</div>
+                        <div style="font-size:11px;color:var(--purple-bright);letter-spacing:2px;">Diksyunaryo ng Sign Language</div>
+                    </div>
+                </div>
+                <p class="contact-about-text">Ang SIGNED ay isang proyektong pang-edukasyon na layunin ay gawing accessible ang sign language para sa lahat ng Pilipino at sa buong mundo.</p>
+            </div>
+            <div class="contact-col">
+                <h4 class="contact-heading">Mga Gumawa</h4>
+                <div class="credits-list">
+                    <div class="credit-item">
+                        <div class="credit-avatar">👩‍💻</div>
+                        <div>
+                            <div class="credit-name">Pangalan ng Gumawa 1</div>
+                            <div class="credit-role">Lead Developer & Design</div>
+                        </div>
+                    </div>
+                    <div class="credit-item">
+                        <div class="credit-avatar">👨‍🎨</div>
+                        <div>
+                            <div class="credit-name">Pangalan ng Gumawa 2</div>
+                            <div class="credit-role">Content & Video Production</div>
+                        </div>
+                    </div>
+                    <div class="credit-item">
+                        <div class="credit-avatar">🧑‍🏫</div>
+                        <div>
+                            <div class="credit-name">Pangalan ng Gumawa 3</div>
+                            <div class="credit-role">Research & ASL Consultant</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-col">
+                <h4 class="contact-heading">Makipag-ugnayan</h4>
+                <div class="contact-links">
+                    <a href="mailto:hello@signed.example.com" class="contact-link">📧 hello@signed.example.com</a>
+                    <a href="#" class="contact-link">📘 Facebook Page</a>
+                    <a href="#" class="contact-link">📸 Instagram</a>
+                    <a href="#" class="contact-link">🐦 Twitter / X</a>
+                </div>
+                <p style="font-size:11px;color:var(--white-muted);margin-top:16px;">Para sa partnerships, kolaborasyon, o tanong — huwag mag-atubiling makipag-ugnayan sa amin!</p>
+            </div>
+        </div>
+        <div class="contact-bottom">
+            <span>© 2025 SIGNED — Diksyunaryo ng Sign Language</span>
+            <span>Ginawa nang may ❤️ para sa Deaf Community</span>
+        </div>
+    </section>
+
+    <!-- ══ BACK TO TOP ══ -->
+    <button id="backToTop" class="back-to-top" title="Bumalik sa tuktok">↑</button>
+
+    <script>
+        /* ════ UNIFIED FILTER ENGINE ════ */
+        const alphabetSectionEl = document.querySelector(".section-title:first-of-type");
+        const phraseSectionEl = document.querySelectorAll(".section-title")[1];
+        const alphabetGridEl = document.querySelectorAll(".container")[0];
+        const phraseGridEl = document.querySelectorAll(".container")[1];
+
+        const noResultsMsg = document.createElement("div");
+        noResultsMsg.id = "noResultsMsg";
+        noResultsMsg.innerHTML = `<span>🤷</span><p>Walang nahanap na sign</p><small>Subukan ang ibang salita o i-clear ang mga filter</small>`;
+        phraseGridEl.after(noResultsMsg);
+
+        function runFilter() {
+            const headerQ = (document.getElementById("searchBar").value || "").trim().toLowerCase();
+            const sidebarQ = (document.getElementById("sidebarSearch").value || "").trim().toLowerCase();
+            const topicVal = document.getElementById("filterTopic").value;
+            const categoryVal = document.getElementById("filterCategory").value;
+            const searchText = headerQ || sidebarQ;
+            const showAlpha = !topicVal || topicVal === "alphabet";
+            const showPhrases = !topicVal || topicVal === "phrases";
+            let visibleCount = 0;
+
+            document.querySelectorAll(".card").forEach(card => {
+                const label = card.querySelector(".label").textContent.toLowerCase();
+                const isAlpha = !!card.dataset.letter;
+                const isPhrase = !!card.dataset.phrase;
+                const cardCat = card.dataset.category || "";
+                const topicOk = (isAlpha && showAlpha) || (isPhrase && showPhrases);
+                const catOk = !categoryVal || isAlpha || cardCat === categoryVal;
+                const textOk = !searchText || label.includes(searchText);
+                const visible = topicOk && catOk && textOk;
+                card.style.display = visible ? "" : "none";
+                if (visible) visibleCount++;
+            });
+
+            const alphaVisible = alphabetGridEl.querySelectorAll(".card:not([style*='display: none']):not([style*='display:none'])").length;
+            const phraseVisible = phraseGridEl.querySelectorAll(".card:not([style*='display: none']):not([style*='display:none'])").length;
+            alphabetSectionEl.style.display = alphaVisible ? "" : "none";
+            alphabetGridEl.style.display = alphaVisible ? "" : "none";
+            phraseSectionEl.style.display = phraseVisible ? "" : "none";
+            phraseGridEl.style.display = phraseVisible ? "" : "none";
+            noResultsMsg.style.display = visibleCount === 0 ? "flex" : "none";
+        }
+
+        function filterCards() { runFilter(); }
+        document.getElementById("searchBar").addEventListener("input", runFilter);
+        document.getElementById("sidebarSearch").addEventListener("input", runFilter);
+        document.getElementById("filterTopic").addEventListener("change", runFilter);
+        document.getElementById("filterCategory").addEventListener("change", runFilter);
+        document.getElementById("filterBtn").addEventListener("click", runFilter);
+        document.getElementById("filterClearBtn").addEventListener("click", function() {
+            document.getElementById("searchBar").value = "";
+            document.getElementById("sidebarSearch").value = "";
+            document.getElementById("filterTopic").value = "";
+            document.getElementById("filterCategory").value = "";
+            runFilter();
+        });
+
+        /* ════ HERO CAROUSEL ════ */
+        const heroTrack = document.getElementById("heroTrack");
+        const heroSlideVideos = heroTrack.querySelectorAll(".hero-video");
+        const heroContentSlides = document.querySelectorAll(".hero-content-slide");
+        const heroDots = document.getElementById("heroDots").querySelectorAll(".dot");
+        const totalSlides = heroSlideVideos.length;
+        let heroIdx = 0;
+        let heroAnimating = false;
+
+        function setHeroSlide(idx, dir) {
+            if (heroAnimating) return;
+            heroAnimating = true;
+            const prev = heroIdx;
+            heroIdx = (idx + totalSlides) % totalSlides;
+            heroTrack.style.transform = `translateX(-${heroIdx * 100}%)`;
+            heroSlideVideos[prev].pause();
+            heroSlideVideos[heroIdx].currentTime = 0;
+            heroSlideVideos[heroIdx].play();
+            const outSlide = heroContentSlides[prev];
+            const inSlide = heroContentSlides[heroIdx];
+            const outDir = (dir === "next") ? "-110%" : "110%";
+            const inStart = (dir === "next") ? "110%" : "-110%";
+            outSlide.style.transition = "none";
+            inSlide.style.transition = "none";
+            inSlide.style.transform = `translateX(${inStart})`;
+            inSlide.style.opacity = "0";
+            inSlide.classList.add("active");
+            inSlide.getBoundingClientRect();
+            outSlide.style.transition = "transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.55s ease";
+            inSlide.style.transition = "transform 0.55s cubic-bezier(0.4,0,0.2,1), opacity 0.55s ease";
+            outSlide.style.transform = `translateX(${outDir})`;
+            outSlide.style.opacity = "0";
+            inSlide.style.transform = "translateX(0)";
+            inSlide.style.opacity = "1";
+            heroDots.forEach((d, i) => d.classList.toggle("active", i === heroIdx));
+            setTimeout(() => {
+                outSlide.classList.remove("active");
+                outSlide.style.transform = "";
+                outSlide.style.opacity = "";
+                outSlide.style.transition = "";
+                inSlide.style.transition = "";
+                heroAnimating = false;
+            }, 560);
+        }
+
+        document.getElementById("heroPrev").addEventListener("click", () => setHeroSlide(heroIdx - 1, "prev"));
+        document.getElementById("heroNext").addEventListener("click", () => setHeroSlide(heroIdx + 1, "next"));
+        let autoTimer = setInterval(() => setHeroSlide(heroIdx + 1, "next"), 6000);
+        ["heroPrev", "heroNext"].forEach(id => {
+            document.getElementById(id).addEventListener("click", () => {
+                clearInterval(autoTimer);
+                autoTimer = setInterval(() => setHeroSlide(heroIdx + 1, "next"), 6000);
+            });
+        });
+
+        /* ════ FACTS CAROUSEL ════ */
+        const factsTrack = document.getElementById("factsTrack");
+        const factCards = factsTrack.querySelectorAll(".fact-card");
+        let factsIdx = 0;
+        const visibleFacts = () => window.innerWidth < 700 ? 1 : window.innerWidth < 1000 ? 2 : 3;
+
+        function scrollFacts(dir) {
+            const vis = visibleFacts();
+            const max = Math.max(0, factCards.length - vis);
+            factsIdx = Math.max(0, Math.min(factsIdx + dir, max));
+            const pct = (100 / vis) * factsIdx;
+            factsTrack.style.transform = `translateX(-${pct}%)`;
+        }
+        document.getElementById("factsPrev").addEventListener("click", () => scrollFacts(-1));
+        document.getElementById("factsNext").addEventListener("click", () => scrollFacts(1));
+
+        /* ════ DAILY SIGN ════ */
+        const dailySigns = [
+            { word: "I Love You", emoji: "🤟", tip: "Ang hintuturo, gitna, at hinlalaki ay nakatayo — simbolo ng pagmamahal." },
+            { word: "Hello", emoji: "👋", tip: "Ang open na palad ay inangat sa gilid ng noo, tulad ng saludo." },
+            { word: "Thank You", emoji: "🙏", tip: "Ang mga daliri ay nakadikit sa labi at inilayo papalabas — nagpapasalamat." },
+            { word: "Please", emoji: "🫶", tip: "Ang flat na kamay ay paikutin sa dibdib." },
+            { word: "Yes", emoji: "👍", tip: "Ang kamao ay iniikot pababa-pataas, tulad ng ulo na tumatango." },
+            { word: "No", emoji: "✌️", tip: "Ang hintuturo at gitnang daliri ay nakabukas at isinara nang mabilis." },
+        ];
+
+        function setDailySign(s) {
+            document.getElementById("dailyEmoji").textContent = s.emoji;
+            document.getElementById("dailyWord").textContent = s.word;
+            document.getElementById("dailyTip").textContent = s.tip;
+        }
+
+        // Set today's sign based on date
+        const todayIdx = new Date().getDate() % dailySigns.length;
+        setDailySign(dailySigns[todayIdx]);
+
+        document.getElementById("randomSignBtn").addEventListener("click", () => {
+            const r = Math.floor(Math.random() * dailySigns.length);
+            setDailySign(dailySigns[r]);
+        });
+
+        /* ════ UPLOAD ════ */
+        const dropArea = document.getElementById("dropArea");
+        const videoUpload = document.getElementById("videoUpload");
+        const uploadForm = document.getElementById("uploadForm");
+        const uploadSuccess = document.getElementById("uploadSuccess");
+        const uploadPreview = document.getElementById("uploadPreview");
+
+        function handleFile(file) {
+            if (!file || !file.type.startsWith("video/")) return;
+            const url = URL.createObjectURL(file);
+            uploadPreview.src = url;
+            dropArea.style.display = "none";
+            uploadForm.style.display = "block";
+        }
+
+        videoUpload.addEventListener("change", e => handleFile(e.target.files[0]));
+
+        dropArea.addEventListener("dragover", e => { e.preventDefault(); dropArea.classList.add("drag-over"); });
+        dropArea.addEventListener("dragleave", () => dropArea.classList.remove("drag-over"));
+        dropArea.addEventListener("drop", e => {
+            e.preventDefault();
+            dropArea.classList.remove("drag-over");
+            handleFile(e.dataTransfer.files[0]);
+        });
+
+        document.getElementById("cancelUploadBtn").addEventListener("click", () => {
+            dropArea.style.display = "flex";
+            uploadForm.style.display = "none";
+            uploadPreview.src = "";
+            videoUpload.value = "";
+        });
+
+        document.getElementById("submitUploadBtn").addEventListener("click", () => {
+            const name = document.getElementById("uploaderName").value.trim();
+            const sign = document.getElementById("uploaderSign").value.trim();
+            if (!name || !sign) { alert("Pakiusap punan ang iyong pangalan at ang sign na ginawa mo."); return; }
+            uploadForm.style.display = "none";
+            uploadSuccess.style.display = "flex";
+        });
+
+        document.getElementById("uploadAgainBtn").addEventListener("click", () => {
+            uploadSuccess.style.display = "none";
+            dropArea.style.display = "flex";
+            uploadPreview.src = "";
+            videoUpload.value = "";
+            document.getElementById("uploaderName").value = "";
+            document.getElementById("uploaderSign").value = "";
+            document.getElementById("uploaderMessage").value = "";
+        });
+
+        /* ════ SUGGESTION BOX ════ */
+        document.getElementById("sendSuggestionBtn").addEventListener("click", () => {
+            const txt = document.getElementById("suggestionText").value.trim();
+            if (!txt) return;
+            document.getElementById("suggestionText").value = "";
+            document.getElementById("suggestionThanks").style.display = "block";
+            setTimeout(() => { document.getElementById("suggestionThanks").style.display = "none"; }, 4000);
+        });
+
+        /* ════ COPY LINK ════ */
+        document.getElementById("copyLinkBtn").addEventListener("click", () => {
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                const btn = document.getElementById("copyLinkBtn");
+                btn.textContent = "✅ Nakopya!";
+                setTimeout(() => { btn.textContent = "📋 Kopyahin ang Link"; }, 2000);
+            });
+        });
+
+        /* ════ BACK TO TOP ════ */
+        const btt = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            btt.classList.toggle("visible", window.scrollY > 400);
+        });
+        btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+        /* ════ ACTIVE NAV LINK ON SCROLL ════ */
+        const sections = document.querySelectorAll("section[id], div[id='phrases']");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove("active"));
+                    const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                    if (active) active.classList.add("active");
+                }
+            });
+        }, { threshold: 0.3 });
+        sections.forEach(s => observer.observe(s));
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
