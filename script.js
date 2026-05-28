@@ -32,7 +32,5 @@ videos.forEach(video => {
         } catch (err) {
             console.log("Play blocked:", err);
         }
-
     });
-
 });
