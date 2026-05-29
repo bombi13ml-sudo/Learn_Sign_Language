@@ -1839,3 +1839,124 @@ header h1 {
     .featured-grid { max-width: 100%; }
     .upload-inner { padding: 20px; }
 }
+/* ── RESPONSIVE OVERRIDES ── */
+
+@media (max-width: 1100px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar {
+        position: static;
+        max-height: none;
+        padding: 0 0 16px;
+        order: -1;
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebar .sidebar-panel:last-child {
+        order: 1;
+    }
+    .sidebar .sidebar-panel {
+        max-width: 100%;
+    }
+    .filter-row {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* collapse sidebar on smaller screens */
+    .hero-banner {
+        flex-direction: column;
+        min-height: auto;
+    }
+    .hero-video-side {
+        width: 100%;
+        height: 240px;
+    }
+    .hero-video-overlay {
+        background: linear-gradient(180deg, transparent 40%, rgba(60, 20, 120, 0.95) 100%);
+    }
+    .hero-content {
+        padding: 24px 20px;
+    }
+    .hero-content-wrap {
+        min-height: 180px;
+    }
+    .main-col .container {
+        padding: 0 0 16px;
+    }
+    .main-col .section-title {
+        padding: 24px 0 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .page-layout {
+        padding: 0 10px;
+    }
+    .header-actions {
+        display: none;
+    }
+    .share-bar {
+        gap: 5px;
+    }
+    .share-btn {
+        padding: 5px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px 20px;
+    }
+    header {
+        padding: 14px 20px;
+    }
+    .section-title {
+        padding: 28px 20px 16px;
+    }
+    #searchBar {
+        width: 220px;
+    }
+    /* header-nav shows as-is on mobile */
+}
+
+@media (max-width: 500px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0 16px 16px;
+    }
+    header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+    #searchBar {
+        width: 100%;
+    }
+    .section-title {
+        padding: 24px 16px 12px;
+    }
+}
+@media (max-width: 1100px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        display: flex;          /* ← add */
+        flex-direction: column; /* ← add */
+    }
+    .sidebar {
+        position: static;
+        max-height: none;
+        padding: 0 0 16px;
+        order: -1;              /* ← add */
+    }
