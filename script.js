@@ -3,9 +3,7 @@ const videos = document.querySelectorAll(".placeholder video");
 let currentVideo = null;
 
 videos.forEach(video => {
-
     video.addEventListener("click", async() => {
-
         // stop other video first
         if (currentVideo && currentVideo !== video) {
             currentVideo.pause();
@@ -34,3 +32,27 @@ videos.forEach(video => {
         }
     });
 });
+
+// Back to Top
+const backToTop = document.getElementById("backToTop");  // ← fixed
+
+if (backToTop) {
+    backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
+
+// Show/hide back to top on scroll
+window.addEventListener('scroll', () => {
+    if (!backToTop) return;
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// Show immediately if already scrolled past 300px on page load
+if (backToTop && window.scrollY > 300) {
+    backToTop.classList.add('visible');
+}

@@ -1780,11 +1780,11 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1;
+    opacity: 0;                    /* ← hide it visually by default */
     transform: translateY(16px);
     transition: var(--transition);
     z-index: 999;
-    pointer-events: none;
+    pointer-events: none;          /* ← keep this, it's correct here */
 }
 
 .back-to-top.visible {
